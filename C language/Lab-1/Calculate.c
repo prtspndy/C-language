@@ -1,15 +1,24 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+int main(void)
 {
-    int a,b;
+    int first;
+    int second;
 
-    printf("Enter two numbers : ");
-    scanf("%d" "%d", &a, &b);
+    printf("Enter two integers: ");
+    if (scanf("%d %d", &first, &second) != 2) {
+        fprintf(stderr, "Please enter two integers.\n");
+        return 1;
+    }
 
-    printf("Additon = %d\n", a + b);
-    printf("Substraction = %d\n", a - b);
-    printf("Multiplication = %d\n", a * b);
-    printf("Divison = %d\n", a / b);
+    printf("Addition = %d\n", first + second);
+    printf("Subtraction = %d\n", first - second);
+    printf("Multiplication = %d\n", first * second);
+    if (second == 0) {
+        printf("Division is undefined when the second number is zero.\n");
+    } else {
+        printf("Division = %d\n", first / second);
+    }
 
     return 0;
 }

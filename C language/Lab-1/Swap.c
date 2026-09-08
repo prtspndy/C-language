@@ -1,17 +1,22 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+int main(void)
 {
-    int a, b, temp;
+    int first;
+    int second;
 
-    printf("Enter two numbers : ");
-    scanf("%d %d", &a, &b);
+    printf("Enter two integers: ");
+    if (scanf("%d %d", &first, &second) != 2) {
+        fprintf(stderr, "Please enter two integers.\n");
+        return 1;
+    }
 
-    temp = a;
-    a = b;
-    b = temp;
+    int temporary = first;
+    first = second;
+    second = temporary;
 
-    printf("a = %d\n", a);
-    printf("b = %d", b);
+    printf("First = %d\n", first);
+    printf("Second = %d\n", second);
 
     return 0;
 }
