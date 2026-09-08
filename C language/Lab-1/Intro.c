@@ -1,5 +1,7 @@
-#include<stdio.h>
-void main()
+#include <stdio.h>
+
+int main(void)
 {
-    printf("This is first file of Lab-1 on C");
+    printf("This is the first file of Lab 1 in C.\n");
+    return 0;
 }
